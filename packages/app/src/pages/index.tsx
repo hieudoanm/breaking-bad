@@ -71,58 +71,74 @@ const HomePage: NextPage = () => {
 
   return (
     <div className="flex h-screen w-screen flex-col gap-y-4 overflow-hidden p-4 md:gap-y-8 md:p-8">
+      {/* Navbar */}
       <nav>
         <div className="flex items-center gap-x-2 md:gap-x-4">
           <input
             id="name"
             name="name"
-            placeholder="Name"
+            placeholder="✨ Your Name"
             className="input grow"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-          <button className="btn btn-primary" onClick={handleDownload}>
-            Download
+          <button className="btn btn-ghost" onClick={handleDownload}>
+            💾 Download
           </button>
           <Link href="/periodic-table" className="btn btn-ghost">
-            Periodic Table
+            🧪 Periodic Table
           </Link>
         </div>
       </nav>
 
+      {/* Main content */}
       <main className="grow">
-        {/* We wrap the content we want to capture in a ref */}
-        <div
-          ref={captureRef}
-          className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
-          {words.map((word, wordIdx) => {
-            const { tile, rest } = highlightFirstElement(word);
-            const { specificName } = periodicTable[tile ?? ''] ?? {};
-            const colorClass = specificNameColorMap[specificName];
+        <div className="flex h-full w-full items-center justify-center">
+          <div
+            ref={captureRef}
+            className="hover:border-base-300 flex aspect-square w-full max-w-md flex-col items-center justify-center p-4 transition-transform duration-300 hover:scale-105 hover:border hover:shadow-2xl hover:shadow-gray-900">
+            {words.map((word, wordIdx) => {
+              const { tile, rest } = highlightFirstElement(word);
+              const { specificName } = periodicTable[tile ?? ''] ?? {};
+              const colorClass = specificNameColorMap[specificName];
 
-            return (
-              <div
-                key={wordIdx}
-                className="flex flex-wrap items-center justify-center gap-1 text-4xl font-bold">
-                {tile && (
-                  <div
-                    className={`${colorClass} relative flex h-16 w-16 flex-col items-center justify-center rounded border-2 text-white`}>
-                    <span className="absolute top-1 right-1 text-xs">
-                      {periodicTable[tile].number}
+              return (
+                <div
+                  key={wordIdx}
+                  className="flex flex-wrap items-center justify-center gap-1 text-4xl font-bold">
+                  {tile && (
+                    <div
+                      className={`${colorClass} text-base-content relative flex h-16 w-16 flex-col items-center justify-center rounded border-2`}>
+                      <span className="absolute top-1 right-1 text-xs">
+                        {periodicTable[tile].number}
+                      </span>
+                      <span className="text-4xl">{tile}</span>
+                    </div>
+                  )}
+                  {rest.map((letter, idx) => (
+                    <span
+                      key={idx}
+                      className="text-4xl font-semibold text-white">
+                      {letter}
                     </span>
-                    <span className="text-4xl">{tile}</span>
-                  </div>
-                )}
-                {rest.map((letter, idx) => (
-                  <span key={idx} className="text-4xl font-semibold text-white">
-                    {letter}
-                  </span>
-                ))}
-              </div>
-            );
-          })}
+                  ))}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="text-center">
+        <p>
+          🧪✨ This page allows you to create your name like the{' '}
+          <span className="text-secondary font-bold">Breaking Bad</span> logo
+          using <span className="text-secondary font-bold">Periodic Table</span>{' '}
+          elements and download it as an image!
+        </p>
+        <p>Perfect for science fun and chemistry vibes ⚛️🔬</p>
+      </footer>
     </div>
   );
 };

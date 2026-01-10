@@ -18,7 +18,9 @@ const PeriodicTablePage: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col gap-y-4 overflow-auto p-4 md:gap-y-8 md:p-8">
       <nav>
-        <Link href="/" className="font-black">
+        <Link
+          href="/"
+          className="text-xl font-extrabold tracking-tight md:text-2xl">
           Breaking Bad
         </Link>
       </nav>
@@ -33,7 +35,7 @@ const PeriodicTablePage: NextPage = () => {
           return (
             <button
               key={name}
-              className={`aspect-square rounded text-xs font-semibold text-white shadow-md transition ${backgroundColor} ${
+              className={`aspect-square rounded text-xs font-semibold text-white shadow-md transition hover:cursor-pointer ${backgroundColor} ${
                 selectedType === name ? 'ring-2 ring-white' : ''
               }`}
               onClick={() =>
@@ -85,7 +87,7 @@ const PeriodicTablePage: NextPage = () => {
               <span className="my-1 text-xl font-bold">{symbol}</span>
               <span
                 title={element.name}
-                className="w-full truncate text-[10px]">
+                className="w-full truncate text-center text-[10px]">
                 {element.name}
               </span>
               <span className="mt-0.5 text-[10px]">{element.mass}</span>
