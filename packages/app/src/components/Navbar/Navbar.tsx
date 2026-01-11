@@ -12,6 +12,9 @@ export const Navbar: FC = () => {
       <div className="flex items-center gap-x-2">
         <Link href="/gallery">🖼️ Gallery</Link>
         <Link href="/periodic-table">🧪 Periodic Table</Link>
+        <Link href="https://github.com/hieudoanm/breaking-bad" target="_blank">
+          🐙 GitHub
+        </Link>
       </div>
     </nav>
   );
