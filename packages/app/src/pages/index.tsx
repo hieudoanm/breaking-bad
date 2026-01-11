@@ -48,6 +48,33 @@ const HomePage: NextPage = () => {
             }
           />
 
+          <div className="join">
+            <button
+              type="button"
+              className={`join-item btn btn-soft ${align === 'left' ? 'btn-primary' : ''}`}
+              onClick={() =>
+                setState((previous) => ({ ...previous, align: 'left' }))
+              }>
+              Left
+            </button>
+            <button
+              type="button"
+              className={`join-item btn btn-soft ${align === 'center' ? 'btn-primary' : ''}`}
+              onClick={() =>
+                setState((previous) => ({ ...previous, align: 'center' }))
+              }>
+              Center
+            </button>
+            <button
+              type="button"
+              className={`join-item btn btn-soft ${align === 'right' ? 'btn-primary' : ''}`}
+              onClick={() =>
+                setState((previous) => ({ ...previous, align: 'right' }))
+              }>
+              Right
+            </button>
+          </div>
+
           <div className="flex items-center justify-between gap-x-4">
             <label className="label justify-start gap-2">
               <input
