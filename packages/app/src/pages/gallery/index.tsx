@@ -4,15 +4,17 @@ import { Preview } from '@breaking-bad/components/Preview';
 import { NextPage } from 'next';
 import { useState } from 'react';
 
-const initialItems = [
-  { isColored: false, isMultiline: false, text: 'Breaking Bad' },
-  { isColored: false, isMultiline: false, text: 'Walter White' },
-  { isColored: false, isMultiline: false, text: 'Jesse Pinkman' },
-  { isColored: false, isMultiline: false, text: 'Skyler White' },
-  { isColored: false, isMultiline: false, text: 'Hank Schrader' },
-  { isColored: false, isMultiline: false, text: 'Marie Schrader' },
-  { isColored: false, isMultiline: false, text: 'Saul Goodman' },
-  { isColored: false, isMultiline: false, text: 'Gus Fring' },
+type Item = { isColored: boolean; isMultiline: boolean; text: string };
+
+const initialItems: Item[] = [
+  { isColored: true, isMultiline: false, text: 'Breaking Bad' },
+  { isColored: true, isMultiline: false, text: 'Walter White' },
+  { isColored: true, isMultiline: false, text: 'Jesse Pinkman' },
+  { isColored: true, isMultiline: false, text: 'Skyler White' },
+  { isColored: true, isMultiline: false, text: 'Hank Schrader' },
+  { isColored: true, isMultiline: false, text: 'Marie Schrader' },
+  { isColored: true, isMultiline: false, text: 'Saul Goodman' },
+  { isColored: true, isMultiline: false, text: 'Gus Fring' },
 ];
 
 export const GalleryPage: NextPage = () => {

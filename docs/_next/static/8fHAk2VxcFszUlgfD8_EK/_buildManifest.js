@@ -12,7 +12,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/f1f25a96a7648b8d.js"
   ],
   "/gallery": [
-    "static/chunks/79d553d92d1e84e8.js"
+    "static/chunks/1863c71913970c80.js"
   ],
   "/periodic-table": [
     "static/chunks/e52a6f3808d8c185.js"
