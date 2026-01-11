@@ -21,7 +21,7 @@ const PeriodicTablePage: NextPage = () => {
       <Navbar />
 
       {/* Filter buttons */}
-      <div className="mb-4 grid grid-cols-5 gap-2">
+      <div className="mb-4 grid grid-cols-2 gap-2 md:grid-cols-5">
         {specificNames.map((name) => {
           const backgroundColor =
             selectedType === null || selectedType === name
