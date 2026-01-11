@@ -6,7 +6,7 @@ exports[`Preview to match snapshot 1`] = `
     class="flex flex-col gap-y-2"
   >
     <div
-      class="hover:border-base-300 hover:shadow-primary/10 hover:bg-base-100 flex h-fit w-fit gap-2 p-4 transition-transform duration-300 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl flex-row flex-wrap gap-x-4 items-start text-left "
+      class="flex h-fit w-fit gap-2 p-4 flex-row flex-wrap gap-x-4 items-start text-left"
     >
       <div
         class="flex flex-wrap items-center gap-1 text-4xl font-bold"

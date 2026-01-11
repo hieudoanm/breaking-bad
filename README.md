@@ -11,11 +11,27 @@
 
 ## Gallery
 
+| No. | Character            | Actor/Actress      |
+| --- | -------------------- | ------------------ |
+| 0   | Breaking Bad         | Better Call Saul   |
+| 1   | Walter White         | Bryan Cranston     |
+| 2   | Jesse Pinkman        | Aaron Paul         |
+| 3   | Skyler White         | Anna Gunn          |
+| 4   | Hank Schrader        | Dean Norris        |
+| 5   | Marie Schrader       | Betsy Brandt       |
+| 6   | Saul Goodman         | Bob Odenkirk       |
+| 7   | Gus Fring            | Giancarlo Esposito |
+| 8   | Mike Ehrmantraut     | Jonathan Banks     |
+| 9   | Tuco Salamanca       | Raymond Cruz       |
+| 10  | Hector Salamanca     | Mark Margolis      |
+| 11  | Lydia Rodarte Quayle | Laura Fraser       |
+| 12  | Todd Alquist         | Jesse Plemons      |
+| 13  | Jane Margolis        | Krysten Ritter     |
+| 14  | Kim Wexler           | Rhea Seehorn       |
+
 ![Breaking Bad - Gallery](./images/gallery.png)
 
 ## Periodic Table
-
-![Breaking Bad - Periodic Table](./images/periodic-table.png)
 
 | 1       | 2       | 3        | 4        | 5        | 6        | 7        | 8        | 9        | 10       | 11       | 12       | 13       | 14       | 15       | 16       | 17       | 18       |
 | ------- | ------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -28,3 +44,5 @@
 | Fr (87) | Ra (88) | Lr (103) | Rf (104) | Db (105) | Sg (106) | Bh (107) | Hs (108) | Mt (109) | Ds (110) | Rg (111) | Cn (112) | Nh (113) | Fl (114) | Mc (115) | Lv (116) | Ts (117) | Og (118) |
 |         |         | La (57)  | Ce (58)  | Pr (59)  | Nd (60)  | Pm (61)  | Sm (62)  | Eu (63)  | Gd (64)  | Tb (65)  | Dy (66)  | Ho (67)  | Er (68)  | Tm (69)  | Yb (70)  |          |          |
 |         |         | Ac (89)  | Th (90)  | Pa (91)  | U (92)   | Np (93)  | Pu (94)  | Am (95)  | Cm (96)  | Bk (97)  | Cf (98)  | Es (99)  | Fm (100) | Md (101) | No (102) |          |          |
+
+![Breaking Bad - Periodic Table](./images/periodic-table.png)

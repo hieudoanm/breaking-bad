@@ -2,38 +2,81 @@ import {
   periodicTable,
   specificNameColorMap,
 } from '@breaking-bad/data/periodic-table';
-import { toKebabCase } from '@breaking-bad/utils/string';
+import { toCapitalize, toKebabCase } from '@breaking-bad/utils/string';
 import html2canvas from 'html2canvas-pro';
 import { FC, useRef } from 'react';
 
 const periodicTableSymbols: Set<string> = new Set(Object.keys(periodicTable));
 
-export function highlightFirstElement(word: string): {
+/**
+ * Find **one and only one** periodic-table symbol anywhere in the word.
+ * It does NOT have to be the first substring.
+ * Returns the word split into: before + tile + after.
+ */
+export const highlightElement = (
+  word: string
+): {
+  before: string[];
   tile?: string;
-  rest: string[];
-} {
-  if (!word) return { rest: [] };
+  after: string[];
+} => {
+  if (!word) return { before: [], after: [] };
 
-  let tile: string | undefined;
-  let rest: string[] = [];
+  const lower = word.toLowerCase();
 
-  const firstTwo = word.slice(0, 2);
-  const normalizedTwo =
-    firstTwo[0]?.toUpperCase() + (firstTwo[1]?.toLowerCase() ?? '');
-  const normalizedOne = word[0].toUpperCase();
+  let bestMatch: {
+    idx: number;
+    symbol: string;
+  } | null = null;
 
-  if (periodicTableSymbols.has(normalizedTwo)) {
-    tile = normalizedTwo;
-    rest = word.slice(2).split('');
-  } else if (periodicTableSymbols.has(normalizedOne)) {
-    tile = normalizedOne;
-    rest = word.slice(1).split('');
-  } else {
-    rest = word.split('');
+  for (const symbol of periodicTableSymbols) {
+    const idx = lower.indexOf(symbol.toLowerCase());
+    if (idx === -1) continue;
+
+    // 1️⃣ Absolute priority: index 0
+    if (idx === 0) {
+      if (
+        !bestMatch ||
+        bestMatch.idx !== 0 ||
+        symbol.length > bestMatch.symbol.length
+      ) {
+        bestMatch = { idx, symbol };
+      }
+      continue;
+    }
+
+    // Ignore non-zero matches if we already have index 0
+    if (bestMatch?.idx === 0) continue;
+
+    // 2️⃣ Prefer longer length
+    if (
+      !bestMatch ||
+      symbol.length > bestMatch.symbol.length ||
+      // 3️⃣ Same length → left to right
+      (symbol.length === bestMatch.symbol.length && idx < bestMatch.idx)
+    ) {
+      bestMatch = { idx, symbol };
+    }
   }
 
-  return { tile, rest };
-}
+  if (!bestMatch) {
+    return {
+      before: word.split(''),
+      after: [],
+    };
+  }
+
+  const { idx, symbol } = bestMatch;
+
+  return {
+    before: word.slice(0, idx).toLowerCase().split(''),
+    tile: toCapitalize(word.slice(idx, idx + symbol.length)),
+    after: word
+      .slice(idx + symbol.length)
+      .toLowerCase()
+      .split(''),
+  };
+};
 
 export type Align = 'left' | 'center' | 'right';
 
@@ -60,7 +103,7 @@ export const Preview: FC<PreviewProps> = ({
 
   const words = text.split(/\s+/);
 
-  const multilineClass: string = isMultiline
+  const multilineClass = isMultiline
     ? 'flex-col gap-y-2'
     : 'flex-row flex-wrap gap-x-4';
 
@@ -88,14 +131,15 @@ export const Preview: FC<PreviewProps> = ({
     <div className="flex flex-col gap-y-2">
       <div
         ref={captureRef}
-        className={`hover:border-base-300 hover:shadow-primary/10 hover:bg-base-100 flex h-fit w-fit gap-2 p-4 transition-transform duration-300 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl ${multilineClass} ${alignClassMap[align]} `}>
+        className={`flex h-fit w-fit gap-2 p-4 ${multilineClass} ${alignClassMap[align]}`}>
         {words.map((word, wordIdx) => {
-          const { tile, rest } = highlightFirstElement(word);
+          const { before, tile, after } = highlightElement(word);
+
           const { specificName } = periodicTable[tile ?? ''] ?? {};
-          const bgColorClass: string = isColored
+          const bgColorClass = isColored
             ? specificNameColorMap[specificName]
             : 'bg-base-content';
-          const textColorClass: string = isColored
+          const textColorClass = isColored
             ? 'text-base-content'
             : 'text-base-100';
 
@@ -103,18 +147,27 @@ export const Preview: FC<PreviewProps> = ({
             <div
               key={wordIdx}
               className="flex flex-wrap items-center gap-1 text-4xl font-bold">
+              {before.map((letter, idx) => (
+                <span
+                  key={`b-${idx}`}
+                  className="text-base-content text-4xl font-semibold">
+                  {letter}
+                </span>
+              ))}
+
               {tile && (
                 <div
                   className={`${bgColorClass} ${textColorClass} relative flex h-16 w-16 flex-col items-center justify-center rounded`}>
                   <span className="absolute top-1 right-1 text-xs">
-                    {periodicTable[tile].number}
+                    {periodicTable[tile].number ?? 0}
                   </span>
                   <span className="text-4xl">{tile}</span>
                 </div>
               )}
-              {rest.map((letter, idx) => (
+
+              {after.map((letter, idx) => (
                 <span
-                  key={idx}
+                  key={`a-${idx}`}
                   className="text-base-content text-4xl font-semibold">
                   {letter}
                 </span>
@@ -123,6 +176,7 @@ export const Preview: FC<PreviewProps> = ({
           );
         })}
       </div>
+
       <button className="btn btn-ghost" onClick={handleDownload}>
         💾 Download
       </button>
