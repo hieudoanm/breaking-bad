@@ -15,7 +15,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/f74e4d1f8f4aaa69.js"
   ],
   "/periodic-table": [
-    "static/chunks/528b60a7dc23ca51.js"
+    "static/chunks/6ed55d8fb11d94b1.js"
   ],
   "__rewrites": {
     "afterFiles": [],

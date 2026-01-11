@@ -50,7 +50,7 @@ const PeriodicTablePage: NextPage = () => {
           const gridColumn = isFBlock
             ? element.number -
               (element.specificName === 'Actinide' ? 88 : 56) +
-              3
+              2
             : element.group;
 
           const gridRow = isFBlock
