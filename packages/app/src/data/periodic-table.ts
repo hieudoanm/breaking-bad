@@ -672,17 +672,17 @@ export const periodicTable: Record<string, Element> = {
     specificName: 'Lanthanide',
     mass: 173.05,
   },
+
+  // Period 6 continues with Transition Metals...
   Lu: {
     number: 71,
-    group: 0,
+    group: 3,
     period: 6,
     name: 'Lutetium',
     state: 'solid',
-    specificName: 'Lanthanide',
+    specificName: 'Transition Metal',
     mass: 174.97,
   },
-
-  // Period 6 continues with Transition Metals...
   Hf: {
     number: 72,
     group: 4,
@@ -964,17 +964,17 @@ export const periodicTable: Record<string, Element> = {
     specificName: 'Actinide',
     mass: 259,
   },
+
+  // Period 7 Transition Metals
   Lr: {
     number: 103,
-    group: 0,
+    group: 3,
     period: 7,
     name: 'Lawrencium',
     state: 'solid',
-    specificName: 'Actinide',
+    specificName: 'Transition Metal',
     mass: 266,
   },
-
-  // Period 7 Transition Metals
   Rf: {
     number: 104,
     group: 4,

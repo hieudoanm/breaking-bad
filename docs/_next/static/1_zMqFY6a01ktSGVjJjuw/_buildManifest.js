@@ -1,6 +1,6 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/f9ea809706f7ced3.js"
+    "static/chunks/b88ecacc083a323a.js"
   ],
   "/404": [
     "static/chunks/d92dfec46745bac1.js"
@@ -12,10 +12,10 @@ self.__BUILD_MANIFEST = {
     "static/chunks/f1f25a96a7648b8d.js"
   ],
   "/gallery": [
-    "static/chunks/1863c71913970c80.js"
+    "static/chunks/70aca151f55f86cd.js"
   ],
   "/periodic-table": [
-    "static/chunks/e52a6f3808d8c185.js"
+    "static/chunks/528b60a7dc23ca51.js"
   ],
   "__rewrites": {
     "afterFiles": [],
