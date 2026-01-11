@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Footer to match snapshot 1`] = `
+<div>
+  <footer
+    class="space-y-1 text-center"
+  >
+    <p>
+      ⚛️ Create your name in the
+       
+      <a
+        class="text-secondary font-bold underline decoration-dotted"
+        href="/"
+      >
+        Breaking Bad
+      </a>
+       
+      style.
+    </p>
+    <p>
+      🧪 Built with
+       
+      <a
+        class="text-secondary font-bold underline decoration-dotted"
+        href="/periodic-table"
+      >
+        Periodic Table
+      </a>
+       
+      elements.
+    </p>
+    <p>
+      🖼️ Check out our
+       
+      <a
+        class="text-secondary font-bold underline decoration-dotted"
+        href="/gallery"
+      >
+        Gallery
+      </a>
+    </p>
+  </footer>
+</div>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Navbar to match snapshot 1`] = `
+<div>
+  <nav
+    class="flex items-center justify-between"
+  >
+    <a
+      class="text-xl font-extrabold tracking-tight md:text-2xl"
+      href="/"
+    >
+      ⚛️ Breaking Bad
+    </a>
+    <div
+      class="flex items-center gap-x-2"
+    >
+      <a
+        href="/gallery"
+      >
+        🖼️ Gallery
+      </a>
+      <a
+        href="/periodic-table"
+      >
+        🧪 Periodic Table
+      </a>
+    </div>
+  </nav>
+</div>
+`;
