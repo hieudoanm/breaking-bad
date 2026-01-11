@@ -13,16 +13,16 @@ export type SpecificName =
   | 'Actinide';
 
 export const specificNameColorMap: Record<SpecificName, string> = {
-  Nonmetal: 'bg-yellow-700', // darker yellow
-  'Noble Gas': 'bg-cyan-700', // darker cyan/light blue
-  'Alkali Metal': 'bg-red-700', // darker red
-  'Alkaline Earth Metal': 'bg-green-700', // darker green
-  Metalloid: 'bg-purple-700', // darker purple
-  'Post-transition Metal': 'bg-gray-700', // darker gray
-  Halogen: 'bg-indigo-700', // darker indigo
-  'Transition Metal': 'bg-blue-700', // darker blue
-  Lanthanide: 'bg-orange-700', // darker orange
-  Actinide: 'bg-pink-700', // darker pink
+  Nonmetal: 'bg-yellow-900', // darker yellow
+  'Noble Gas': 'bg-cyan-900', // darker cyan/light blue
+  'Alkali Metal': 'bg-red-900', // darker red
+  'Alkaline Earth Metal': 'bg-green-900', // darker green
+  Metalloid: 'bg-purple-900', // darker purple
+  'Post-transition Metal': 'bg-gray-900', // darker gray
+  Halogen: 'bg-indigo-900', // darker indigo
+  'Transition Metal': 'bg-blue-900', // darker blue
+  Lanthanide: 'bg-orange-900', // darker orange
+  Actinide: 'bg-pink-900', // darker pink
 };
 
 export type Element = {

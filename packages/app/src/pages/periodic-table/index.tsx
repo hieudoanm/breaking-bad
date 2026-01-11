@@ -4,7 +4,8 @@ import {
   periodicTable,
   specificNameColorMap,
 } from '@breaking-bad/data/periodic-table';
-import Link from 'next/link';
+import { Navbar } from '@breaking-bad/components/Navbar';
+import { Footer } from '@breaking-bad/components/Footer';
 
 const elements = Object.entries(periodicTable);
 
@@ -17,16 +18,10 @@ const PeriodicTablePage: NextPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col gap-y-4 overflow-auto p-4 md:gap-y-8 md:p-8">
-      <nav>
-        <Link
-          href="/"
-          className="text-xl font-extrabold tracking-tight md:text-2xl">
-          Breaking Bad
-        </Link>
-      </nav>
+      <Navbar />
 
       {/* Filter buttons */}
-      <div className="mb-4 grid grid-cols-10 gap-2">
+      <div className="mb-4 grid grid-cols-5 gap-2">
         {specificNames.map((name) => {
           const backgroundColor =
             selectedType === null || selectedType === name
@@ -35,7 +30,7 @@ const PeriodicTablePage: NextPage = () => {
           return (
             <button
               key={name}
-              className={`aspect-square rounded text-xs font-semibold text-white shadow-md transition hover:cursor-pointer ${backgroundColor} ${
+              className={`btn w-full font-semibold text-white shadow-md transition hover:cursor-pointer ${backgroundColor} ${
                 selectedType === name ? 'ring-2 ring-white' : ''
               }`}
               onClick={() =>
@@ -95,6 +90,9 @@ const PeriodicTablePage: NextPage = () => {
           );
         })}
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
