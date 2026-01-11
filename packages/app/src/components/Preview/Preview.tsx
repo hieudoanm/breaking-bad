@@ -107,12 +107,16 @@ export const Preview: FC<PreviewProps> = ({
     ? 'flex-col gap-y-2'
     : 'flex-row flex-wrap gap-x-4';
 
-  const handleDownload = async () => {
+  const handleDownload = async ({
+    withBackground = false,
+  }: {
+    withBackground: boolean;
+  }) => {
     if (!captureRef.current) return;
 
     try {
       const canvas = await html2canvas(captureRef.current, {
-        backgroundColor: null,
+        backgroundColor: withBackground ? '#1d232a' : null,
         scrollY: -window.scrollY,
       });
 
@@ -177,9 +181,37 @@ export const Preview: FC<PreviewProps> = ({
         })}
       </div>
 
-      <button className="btn btn-ghost" onClick={handleDownload}>
-        💾 Download
-      </button>
+      <div className="dropdown mx-auto">
+        <label tabIndex={0} className="btn btn-ghost">
+          💾 Download
+        </label>
+        <ul
+          tabIndex={0}
+          className="menu dropdown-content rounded-box bg-neutral z-50 w-56 p-2 shadow">
+          <li>
+            <button
+              type="button"
+              className="btn btn-ghost justify-start"
+              onClick={() => {
+                handleDownload({ withBackground: true });
+                (document.activeElement as HTMLElement | null)?.blur();
+              }}>
+              💾 With Background
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="btn btn-ghost justify-start"
+              onClick={() => {
+                handleDownload({ withBackground: false });
+                (document.activeElement as HTMLElement | null)?.blur();
+              }}>
+              💾 Without Background
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

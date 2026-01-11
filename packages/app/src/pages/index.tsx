@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
       align = 'center',
       isColored = true,
       isMultiline = false,
-      name = 'Better Call Saul',
+      name = 'Breaking Bad',
     },
     setState,
   ] = useState<{
@@ -22,7 +22,7 @@ const HomePage: NextPage = () => {
     align: 'center',
     isColored: true,
     isMultiline: false,
-    name: 'Better Call Saul',
+    name: 'Breaking Bad',
   });
 
   return (
@@ -38,7 +38,7 @@ const HomePage: NextPage = () => {
             id="name"
             name="name"
             placeholder="✨ Your Name"
-            className="input grow"
+            className="input transform-all w-full grow"
             value={name}
             onChange={(event) =>
               setState((previous) => ({
@@ -47,33 +47,6 @@ const HomePage: NextPage = () => {
               }))
             }
           />
-
-          <div className="join">
-            <button
-              type="button"
-              className={`join-item btn btn-soft ${align === 'left' ? 'btn-primary' : ''}`}
-              onClick={() =>
-                setState((previous) => ({ ...previous, align: 'left' }))
-              }>
-              Left
-            </button>
-            <button
-              type="button"
-              className={`join-item btn btn-soft ${align === 'center' ? 'btn-primary' : ''}`}
-              onClick={() =>
-                setState((previous) => ({ ...previous, align: 'center' }))
-              }>
-              Center
-            </button>
-            <button
-              type="button"
-              className={`join-item btn btn-soft ${align === 'right' ? 'btn-primary' : ''}`}
-              onClick={() =>
-                setState((previous) => ({ ...previous, align: 'right' }))
-              }>
-              Right
-            </button>
-          </div>
 
           <div className="flex items-center gap-x-4">
             <label className="label justify-start gap-2">
@@ -100,6 +73,35 @@ const HomePage: NextPage = () => {
               Multiline
             </label>
           </div>
+
+          {isMultiline && (
+            <div className="join">
+              <button
+                type="button"
+                className={`join-item btn btn-soft ${align === 'left' ? 'btn-primary' : ''}`}
+                onClick={() =>
+                  setState((previous) => ({ ...previous, align: 'left' }))
+                }>
+                Left
+              </button>
+              <button
+                type="button"
+                className={`join-item btn btn-soft ${align === 'center' ? 'btn-primary' : ''}`}
+                onClick={() =>
+                  setState((previous) => ({ ...previous, align: 'center' }))
+                }>
+                Center
+              </button>
+              <button
+                type="button"
+                className={`join-item btn btn-soft ${align === 'right' ? 'btn-primary' : ''}`}
+                onClick={() =>
+                  setState((previous) => ({ ...previous, align: 'right' }))
+                }>
+                Right
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
