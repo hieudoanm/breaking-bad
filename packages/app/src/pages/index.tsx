@@ -75,7 +75,7 @@ const HomePage: NextPage = () => {
             </button>
           </div>
 
-          <div className="flex items-center justify-between gap-x-4">
+          <div className="flex items-center gap-x-4">
             <label className="label justify-start gap-2">
               <input
                 type="checkbox"
