@@ -12,23 +12,38 @@ exports[`Navbar to match snapshot 1`] = `
       ⚛️ Breaking Bad
     </a>
     <div
-      class="flex items-center gap-x-2"
+      class="flex items-center gap-x-2 md:gap-x-4"
     >
       <a
         href="/gallery"
       >
-        🖼️ Gallery
+        🖼️ 
+        <span
+          class="hidden md:inline"
+        >
+          Gallery
+        </span>
       </a>
       <a
         href="/periodic-table"
       >
-        🧪 Periodic Table
+        🧪 
+        <span
+          class="hidden md:inline"
+        >
+          Periodic Table
+        </span>
       </a>
       <a
         href="https://github.com/hieudoanm/breaking-bad"
         target="_blank"
       >
-        🐙 GitHub
+        🐙 
+        <span
+          class="hidden md:inline"
+        >
+          GitHub
+        </span>
       </a>
     </div>
   </nav>

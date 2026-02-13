@@ -12,11 +12,37 @@ exports[`Preview to match snapshot 1`] = `
         class="flex flex-wrap items-center gap-1 text-4xl font-bold"
       />
     </div>
-    <button
-      class="btn btn-ghost"
+    <div
+      class="dropdown mx-auto"
     >
-      💾 Download
-    </button>
+      <label
+        class="btn btn-ghost"
+        tabindex="0"
+      >
+        💾 Download
+      </label>
+      <ul
+        class="menu dropdown-content rounded-box bg-neutral z-50 w-56 p-2 shadow"
+        tabindex="0"
+      >
+        <li>
+          <button
+            class="btn btn-ghost justify-start"
+            type="button"
+          >
+            💾 With Background
+          </button>
+        </li>
+        <li>
+          <button
+            class="btn btn-ghost justify-start"
+            type="button"
+          >
+            💾 Without Background
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
