@@ -3,13 +3,16 @@ self.__BUILD_MANIFEST = {
     "static/chunks/3f0cbae04a7255cf.js"
   ],
   "/404": [
-    "static/chunks/21cf57de10f8fb04.js"
+    "static/chunks/444befa2cfeb5fbd.js"
   ],
   "/500": [
-    "static/chunks/6c5e91964fa35fac.js"
+    "static/chunks/aa19a5baf674994b.js"
   ],
   "/_error": [
-    "static/chunks/1c2bd6a2695db0cb.js"
+    "static/chunks/5665f4ae0f06808a.js"
+  ],
+  "/app": [
+    "static/chunks/60d1af0166eaf6a5.js"
   ],
   "/gallery": [
     "static/chunks/50112a499a21407a.js"
@@ -32,6 +35,7 @@ self.__BUILD_MANIFEST = {
     "/_app",
     "/_error",
     "/api/trpc/[trpc]",
+    "/app",
     "/gallery",
     "/periodic-table",
     "/version"
