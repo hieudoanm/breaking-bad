@@ -1,8 +1,8 @@
-import { NextPage } from 'next';
-import { useState } from 'react';
-import { Align, Preview } from '@breaking-bad/components/Preview';
 import { Footer } from '@breaking-bad/components/Footer';
 import { Navbar } from '@breaking-bad/components/Navbar';
+import { Align, Preview } from '@breaking-bad/components/Preview';
+import { NextPage } from 'next';
+import { useState } from 'react';
 
 const HomePage: NextPage = () => {
   const [
