@@ -1,126 +1,83 @@
-import { Footer } from '@breaking-bad/components/Footer';
-import { Navbar } from '@breaking-bad/components/Navbar';
-import { Align, Preview } from '@breaking-bad/components/Preview';
+import {
+  LandingContent,
+  LandingTemplate,
+} from '@breaking-bad/templates/LandingTemplate';
 import { NextPage } from 'next';
-import { useState } from 'react';
+
+const content: LandingContent = {
+  navbar: {
+    title: 'AppName',
+    buttonText: 'Open App',
+    buttonHref: '/app',
+  },
+  hero: {
+    title: 'Simple, Powerful, and Built for Speed',
+    tagline:
+      'A fast and intuitive app designed to help you get things done quickly and efficiently.',
+    buttonText: 'Get Started',
+    buttonHref: '/app',
+  },
+  features: {
+    title: 'Features',
+    items: [
+      {
+        id: 'fast',
+        emoji: '⚡',
+        title: 'Fast and Responsive',
+        description:
+          'Enjoy a smooth and responsive experience designed for speed and efficiency.',
+      },
+      {
+        id: 'easy',
+        emoji: '✨',
+        title: 'Easy to Use',
+        description:
+          'Clean and intuitive design that lets you focus on what matters most.',
+      },
+      {
+        id: 'powerful',
+        emoji: '🧰',
+        title: 'Powerful Tools',
+        description:
+          'Packed with useful features to help you work smarter and more effectively.',
+      },
+      {
+        id: 'privacy',
+        emoji: '🔒',
+        title: 'Privacy First',
+        description:
+          'Your data stays in your control with privacy-focused design and secure processing.',
+      },
+      {
+        id: 'accessible',
+        emoji: '🌐',
+        title: 'Accessible Anywhere',
+        description:
+          'Use the app from any modern browser on desktop, tablet, or mobile.',
+      },
+      {
+        id: 'lightweight',
+        emoji: '📦',
+        title: 'Lightweight',
+        description:
+          'Minimal dependencies and optimized performance for a fast loading experience.',
+      },
+    ],
+  },
+  cta: {
+    title: 'Ready to Get Started?',
+    description:
+      'Open the app and start using it instantly. No signup required.',
+    buttonText: 'Open App',
+    buttonHref: '/app',
+  },
+  footer: {
+    name: 'AppName',
+  },
+};
 
 const HomePage: NextPage = () => {
-  const [
-    {
-      align = 'center',
-      isColored = true,
-      isMultiline = false,
-      name = 'Breaking Bad',
-    },
-    setState,
-  ] = useState<{
-    align: Align;
-    isColored: boolean;
-    isMultiline: boolean;
-    name: string;
-  }>({
-    align: 'center',
-    isColored: true,
-    isMultiline: false,
-    name: 'Breaking Bad',
-  });
-
-  return (
-    <div className="flex h-screen w-screen flex-col gap-y-4 overflow-hidden p-4 md:gap-y-8 md:p-8">
-      {/* Navbar */}
-      <div className="flex flex-col gap-y-3">
-        {/* Row 1: Title + Periodic Table */}
-        <Navbar />
-
-        {/* Row 2: Form */}
-        <div className="flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-4">
-          <input
-            id="name"
-            name="name"
-            placeholder="✨ Your Name"
-            className="input transform-all w-full grow"
-            value={name}
-            onChange={(event) =>
-              setState((previous) => ({
-                ...previous,
-                name: event.target.value,
-              }))
-            }
-          />
-
-          <div className="flex items-center gap-x-4">
-            <label className="label justify-start gap-2">
-              <input
-                type="checkbox"
-                checked={isColored}
-                className="toggle toggle-primary checked:bg-primary/50"
-                onChange={(e) =>
-                  setState((p) => ({ ...p, isColored: e.target.checked }))
-                }
-              />
-              Colored
-            </label>
-
-            <label className="label justify-start gap-2">
-              <input
-                type="checkbox"
-                checked={isMultiline}
-                className="toggle toggle-primary checked:bg-primary/50"
-                onChange={(e) =>
-                  setState((p) => ({ ...p, isMultiline: e.target.checked }))
-                }
-              />
-              Multiline
-            </label>
-          </div>
-
-          {isMultiline && (
-            <div className="join">
-              <button
-                type="button"
-                className={`join-item btn btn-soft ${align === 'left' ? 'btn-primary' : ''}`}
-                onClick={() =>
-                  setState((previous) => ({ ...previous, align: 'left' }))
-                }>
-                Left
-              </button>
-              <button
-                type="button"
-                className={`join-item btn btn-soft ${align === 'center' ? 'btn-primary' : ''}`}
-                onClick={() =>
-                  setState((previous) => ({ ...previous, align: 'center' }))
-                }>
-                Center
-              </button>
-              <button
-                type="button"
-                className={`join-item btn btn-soft ${align === 'right' ? 'btn-primary' : ''}`}
-                onClick={() =>
-                  setState((previous) => ({ ...previous, align: 'right' }))
-                }>
-                Right
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Main content */}
-      <main className="grow">
-        <div className="flex h-full w-full items-center justify-center">
-          <Preview
-            align={align}
-            isColored={isColored}
-            isMultiline={isMultiline}
-            text={name}
-          />
-        </div>
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
-  );
+  return <LandingTemplate content={content} />;
 };
 
 export default HomePage;
