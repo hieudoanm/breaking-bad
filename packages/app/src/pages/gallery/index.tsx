@@ -1,7 +1,7 @@
-import { Footer } from '@breaking-bad/components/Footer';
-import { Navbar } from '@breaking-bad/components/Navbar';
-import { Preview } from '@breaking-bad/components/Preview';
-import { characters } from '@breaking-bad/data/characters';
+import { Footer } from '@breaking.bad/components/Footer';
+import { Navbar } from '@breaking.bad/components/Navbar';
+import { Preview } from '@breaking.bad/components/Preview';
+import { characters } from '@breaking.bad/data/characters';
 import { NextPage } from 'next';
 import { useState } from 'react';
 

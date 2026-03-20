@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from 'next';
-import { VersionTemplate } from '@breaking-bad/templates/VersionTemplate';
+import { VersionTemplate } from '@breaking.bad/templates/VersionTemplate';
 
 type Props = {
   version: string;

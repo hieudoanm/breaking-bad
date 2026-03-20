@@ -16,7 +16,7 @@ export const Navbar: FC = () => {
         <Link href="/periodic-table">
           🧪 <span className="hidden md:inline">Periodic Table</span>
         </Link>
-        <Link href="https://github.com/hieudoanm/breaking-bad" target="_blank">
+        <Link href="https://github.com/hieudoanm/breaking.bad" target="_blank">
           🐙 <span className="hidden md:inline">GitHub</span>
         </Link>
       </div>

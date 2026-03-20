@@ -1,10 +1,10 @@
-import { Footer } from '@breaking-bad/components/Footer';
-import { Navbar } from '@breaking-bad/components/Navbar';
+import { Footer } from '@breaking.bad/components/Footer';
+import { Navbar } from '@breaking.bad/components/Navbar';
 import {
   periodicTable,
   specificNameColorMap,
   Element,
-} from '@breaking-bad/data/periodic-table';
+} from '@breaking.bad/data/periodic-table';
 import { NextPage } from 'next';
 import { FC, useState } from 'react';
 

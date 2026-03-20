@@ -1,7 +1,7 @@
 import {
   LandingContent,
   LandingTemplate,
-} from '@breaking-bad/templates/LandingTemplate';
+} from '@breaking.bad/templates/LandingTemplate';
 import { NextPage } from 'next';
 
 const content: LandingContent = {

@@ -1,18 +1,18 @@
 {
-  "name": "@breaking-bad/app",
+  "name": "@breaking.bad/app",
   "version": "0.0.1",
   "private": true,
-  "description": "breaking-bad",
+  "description": "breaking.bad",
   "keywords": [
-    "breaking-bad"
+    "breaking.bad"
   ],
-  "homepage": "https://hieudoanm.github.io/breaking-bad",
+  "homepage": "https://hieudoanm.github.io/breaking.bad",
   "bugs": {
-    "url": "https://github.com/hieudoanm/breaking-bad/issues"
+    "url": "https://github.com/hieudoanm/breaking.bad/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hieudoanm/breaking-bad.git"
+    "url": "git+ssh://git@github.com/hieudoanm/breaking.bad.git"
   },
   "license": "GPL-3.0",
   "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",

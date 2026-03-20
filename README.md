@@ -4,7 +4,7 @@ Create names in the iconic **Breaking Bad** style using **Periodic Table element
 
 Generate, preview, and download chemistry-inspired logos inspired by *Breaking Bad* and *Better Call Saul*.
 
-👉 **Live demo:** [Breaking Bad](https://hieudoanm.github.io/breaking-bad)
+👉 **Live demo:** [Breaking Bad](https://hieudoanm.github.io/breaking.bad)
 
 ---
 

@@ -1,4 +1,4 @@
-import { ErrorTemplate } from '@breaking-bad/templates/ErrorTemplate';
+import { ErrorTemplate } from '@breaking.bad/templates/ErrorTemplate';
 import { NextPage } from 'next';
 
 const messages = [

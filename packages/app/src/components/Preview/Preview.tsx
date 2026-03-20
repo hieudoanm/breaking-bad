@@ -1,8 +1,8 @@
 import {
   periodicTable,
   specificNameColorMap,
-} from '@breaking-bad/data/periodic-table';
-import { toCapitalize, toKebabCase } from '@breaking-bad/utils/string';
+} from '@breaking.bad/data/periodic-table';
+import { toCapitalize, toKebabCase } from '@breaking.bad/utils/string';
 import html2canvas from 'html2canvas-pro';
 import { FC, useRef } from 'react';
 

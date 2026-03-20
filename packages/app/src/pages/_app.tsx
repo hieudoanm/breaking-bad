@@ -1,5 +1,5 @@
-import '@breaking-bad/styles/globals.css';
-import { trpc } from '@breaking-bad/utils/trpc';
+import '@breaking.bad/styles/globals.css';
+import { trpc } from '@breaking.bad/utils/trpc';
 import type { AppProps } from 'next/app';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Head from 'next/head';
