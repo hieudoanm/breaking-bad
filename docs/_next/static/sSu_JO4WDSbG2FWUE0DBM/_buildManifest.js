@@ -14,6 +14,9 @@ self.__BUILD_MANIFEST = {
   "/app": [
     "static/chunks/0epxwznjp3.6a.js"
   ],
+  "/downloads": [
+    "static/chunks/01zxqk8x47wzo.js"
+  ],
   "/gallery": [
     "static/chunks/03.js2_avz4-~.js"
   ],
@@ -36,6 +39,7 @@ self.__BUILD_MANIFEST = {
     "/_error",
     "/api/trpc/[trpc]",
     "/app",
+    "/downloads",
     "/gallery",
     "/periodic-table",
     "/version"
